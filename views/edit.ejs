@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Responsive Form</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+
+<body>
+    <div class="main w-full min-h-screen bg-zinc-900 flex items-center justify-center p-4">
+        <div class="form w-full max-w-2xl p-6 bg-zinc-800 rounded-lg shadow-lg">
+            <h1 class="text-white text-2xl sm:text-3xl font-bold mb-6 text-center">Edit Name or Details</h1>
+            <form action="/edit" id="myForm" method="post" class="space-y-6">
+                <div>
+                    <label for="oldusername" class="block text-sm font-medium text-white">Old Username</label>
+                    <input type="text" name="oldusername" id="oldusername" autocomplete="username"
+                        value="<%=filename%>"
+                        class="mt-2 w-full rounded-md border-0 bg-black py-2 px-3 text-sm text-zinc-400 placeholder:text-zinc-500 focus:ring-2 focus:ring-indigo-600 focus:outline-none"
+                        placeholder="Enter title for the notes to be shown">
+                </div>
+
+                <div>
+                    <label for="username" class="block text-sm font-medium text-white">New Username</label>
+                    <input type="text" name="username" id="username" autocomplete="username"
+                        class="mt-2 w-full rounded-md border-0 bg-black py-2 px-3 text-sm text-white placeholder:text-zinc-500 focus:ring-2 focus:ring-indigo-600 focus:outline-none"
+                        placeholder="Enter new username for the notes to be shown">
+                </div>
+
+                <div>
+                    <label for="oldabout" class="block text-sm font-medium text-white">Old Details</label>
+                    <textarea id="oldabout" name="oldabout" rows="4"
+                        class="mt-2 w-full rounded-md border-0 bg-black py-2 px-3 text-sm text-zinc-400 placeholder:text-zinc-500 focus:ring-2 focus:ring-indigo-600 focus:outline-none"
+                        placeholder="Enter the old description"><%=filedata%></textarea>
+                </div>
+
+                <div>
+                    <label for="about" class="block text-sm font-medium text-white">New Details</label>
+                    <textarea id="about" name="about" rows="4"
+                        class="mt-2 w-full rounded-md border-0 bg-black py-2 px-3 text-sm text-white placeholder:text-zinc-500 focus:ring-2 focus:ring-indigo-600 focus:outline-none"
+                        placeholder="Enter the new description"></textarea>
+                </div>
+
+                <div class="flex items-center justify-between">
+                    <button id="cancelBtn" type="button"
+                        class="text-sm font-semibold text-white hover:text-yellow-500 transition duration-200">
+                        Cancel
+                    </button>
+                    <button type="submit"
+                        class="rounded-md bg-yellow-600 px-4 py-2 text-sm font-semibold text-white shadow-sm hover:bg-green-500 focus:outline-none focus:ring-2 focus:ring-indigo-600">
+                        Update
+                    </button>
+                </div>
+            </form>
+        </div>
+    </div>
+</body>
+
+</html>
